@@ -1,0 +1,486 @@
+/* Reset */
+
+body {
+    margin: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+    --white: white;
+    --black: black;
+    --primary: #F0EEEB;
+    --darker: #C8C8C8;
+    --darkest: #9E9E9E;
+    --link-col: #5A5547;
+
+    --radius-sm: 5px;
+    --radius-md: 10px;
+}
+
+/* Type */
+
+body {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.125rem;
+}
+
+h1, h2 {
+    font-size: 2.25rem;
+    margin: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+/* Images Initial Setup */
+
+.img {
+    background-size: 100%;
+    width: 100%
+}
+
+.hero-img {
+    background-image: url('img/Hero Image (Mobile).png');
+    aspect-ratio: 1122 / 1098;
+}
+
+.escrow-img {
+    background-image: url('img/Phone Mockup (Mobile).png');
+    aspect-ratio: 374 / 405;
+}
+
+.editor-img {
+    background-image: url('img/Text Editor.png');
+    aspect-ratio: 2624 / 1716;
+}
+
+/* General */
+
+.container {
+    margin-inline: auto;
+    width: 90%;
+}
+
+.subtitle {
+    margin-top: 0.5rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    background-color: var(--black);
+    color: var(--white);
+
+    border: none;
+    border-radius: var(--radius-sm);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    padding-inline: 1.5rem;
+    padding-block: 1.25rem;
+}
+
+.link {
+    color: inherit;
+}
+
+.arrow-link {
+    color: var(--link-col);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.arrow-link::after {
+    content: ' →'
+}
+
+/* Layout */
+
+.notice {
+    padding-block: 1.125rem;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.notice-text {
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+header, section.main {
+    background-color: var(--primary);
+}
+
+header > .container {
+    padding-block: 2.375rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-middle,
+.header-right {
+    display: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-hamburger {
+    margin-top: 3px;
+}
+
+.main-logo::after {
+    content: 'spense.';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+section.main > .container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2.5rem;
+}
+
+.main-body {
+    order: 2;
+    margin-top: 2.5rem;
+}
+
+
+ul.checked {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+ul.checked li:before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(img/Checkmark.svg) no-repeat left 0 center;
+}
+
+ul.checked li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: -3px;
+}
+
+.main-form {
+    margin-top: 2.25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.main-form input {
+    box-sizing: content-box;
+    width: 15ch;
+
+    border: 1px solid var(--darker);
+    border-radius: var(--radius-sm);
+
+    padding: 1.125rem 1.5rem;
+    font-size: 1rem;
+}
+
+section.logos {
+    display: flex;
+    gap: 1rem;
+    overflow-x: hidden;
+    padding-block: 3.125rem;
+}
+
+section.logos img {
+    height: 1.625rem;
+}
+
+section.escrow {
+    background-color: var(--primary);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    padding-bottom: 0;
+}
+
+.escrow-img {
+    width: calc(100% + 5rem);
+    margin-inline: -2.5rem;
+    margin-top: -2.125rem;
+    margin-bottom: 0;
+}
+
+section.editor {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+}
+
+.editor-img {
+    width: calc(100% + 1.5rem);
+    margin-top: 2.25rem;
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+footer > .container {
+    padding-block: 4rem;
+    display: grid;
+    grid-template-areas: 
+        "main main"
+        "company opportunities"
+        "sitemap resources";
+    grid-template-columns: min-content min-content;
+    row-gap: 1rem;
+    justify-content: space-between;
+}
+
+.col-main { grid-area: main; }
+.col-sitemap { grid-area: sitemap; }
+.col-company { grid-area: company; }
+.col-resources { grid-area: resources; }
+.col-opportunities { grid-area: opportunities; }
+
+footer p,
+.footer-nav-link {
+    color: var(--darkest);
+}
+
+footer p {
+    margin-top: 0.5rem;
+}
+
+.footer-col-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.footer-nav-link {
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Tablet */
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-img {
+        background-image: url('img/Hero Image (Tablet).png');
+        aspect-ratio: 2064 / 1098;
+    }
+
+    .escrow-img {
+        background-image: url('img/Phone Mockup (Tablet).png');
+        aspect-ratio: 688 / 405;
+    }
+
+    .notice {
+        padding-block: 0.8rem;
+    }
+
+    header > .container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        justify-items: end;
+
+        --gap: 1.5rem;
+        gap: var(--gap);
+    }
+
+    .header-middle,
+    .header-right {
+        display: block;
+    }
+
+    .header-hamburger {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex;
+        gap: var(--gap);
+    }
+
+    .header-right {
+        align-self: stretch;
+        display: flex;
+        gap: var(--gap);
+        align-items: center;
+    }
+
+    .main-body {
+        margin-top: 2rem;
+    }
+
+    section.main > .container {
+        padding-bottom: 3.5rem;
+    }
+
+    section.escrow {
+        padding: 4rem 6.25rem 0;
+    }
+
+    .escrow-img {
+        width: calc(100% + 12.5rem);
+        margin-inline: -6.25rem;
+        margin-top: -2.5rem;
+        margin-bottom: 0;
+    }
+
+    .editor-img {
+        width: calc(100% + 2.75rem);
+        margin-top: 2rem;
+        margin-bottom: -1.625rem;
+    }
+
+    section.editor {
+        margin-bottom: 0;
+    }
+
+    footer > .container {
+        padding-block: 3.5rem;
+        grid-template-areas: 
+            "main main sitemap resources"
+            "company opportunities . .";
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 4rem;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1220px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-img {
+        background-image: url('img/Hero Image (Desktop).png');
+        aspect-ratio: 1276 / 1557;
+    }
+
+    .escrow-img {
+        background-image: url('img/Phone Mockup (Desktop).png');
+        aspect-ratio: 1140 / 405;
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 1140px;
+    }
+
+    header > .container {
+        grid-template-columns: 1fr;
+    }
+
+    header > .container > * {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .header-left {
+        justify-self: start;
+    }
+
+    .header-right {
+        justify-self: end;
+    }
+
+    .header-middle {
+        justify-self: center;
+    }
+
+    section.main > .container {
+        padding-bottom: 4.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main-body {
+        order: 0;
+        width: 55%;
+        margin-top: 4.25rem;
+    }
+
+    .hero-img {
+        width: 37.25%;
+    }
+
+    section.logos {
+        gap: 2.5rem;
+    }
+
+    section.escrow {
+        padding: 6.25rem 6.25rem 0;
+        display: grid;
+    }
+
+    section.escrow > * {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .escrow-body {
+        width: 50%;
+    }
+
+    .escrow-img {
+        width: calc(100% + 12.5rem);
+        margin-top: -5.8rem;
+    }
+
+    section.editor {
+        display: flex;
+        justify-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .editor-body {
+        width: 41.5%;
+        margin-top: 7rem;
+    }
+
+    .editor-img {
+        width: 58.5%;
+        order: -1;
+        margin-top: 0;
+    }
+
+    footer > .container {
+        grid-template-areas: "main sitemap resources company opportunities";
+        grid-template-columns: repeat(5, auto);
+        column-gap: 5rem;
+    }
+    
+    .col-main {
+        margin-right: 2.5rem;
+    }
+}
